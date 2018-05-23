@@ -1,0 +1,31 @@
+interpretation tree: de.up.ling.irtg.algebra.TagTreeAlgebra
+interpretation graph: de.up.ling.irtg.algebra.graph.GraphAlgebra
+
+S! -> sentence(ROOT)
+[tree] 	@(?1,*)
+[graph] f_subj(f_obj(merge("(r<root> / ROOT :root (m<predicate>))",r_predicate(?1))))
+
+
+ROOT -> predicateLoves(NNp,NNp)
+[tree] 	S(?1,VP(V(loves),?2))
+[graph] f_obj(merge(merge("(s<root> / loves  :nsubj (x<subject>) :dobj (z<object>))", r_subject(?1)), r_object(?2)))
+
+NNp -> nounLonly(NN)
+[tree] NP(NN(?1))
+[graph] f_subj(f_obj(?1))
+
+/*NNp -> noun2(NN2)
+[tree] NN2(?1)
+[graph] f_obj(merge("(np<root> / NN2 :noun (m<noun2>))",r_noun2(?1)))*/
+
+NN -> john
+[tree] john
+[graph] "(n<root> / john)"
+
+NN -> mary
+[tree] mary
+[graph] "(n<root> / mary)"
+
+/*V -> loves
+[tree] loves
+[graph] "(v<root> / loves)"*/
