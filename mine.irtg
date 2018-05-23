@@ -2,7 +2,7 @@ interpretation tree: de.up.ling.irtg.algebra.TagTreeAlgebra
 interpretation graph: de.up.ling.irtg.algebra.graph.GraphAlgebra
 
 S! -> sentence(ROOT)
-[tree] 	@(?1,*)
+[tree] 	?1
 [graph] f_subj(f_obj(merge("(r<root> / ROOT :root (m<predicate>))",r_predicate(?1))))
 
 
@@ -29,3 +29,5 @@ NN -> mary
 /*V -> loves
 [tree] loves
 [graph] "(v<root> / loves)"*/
+
+/*S(NP(NN(john)),VP(V(loves),NP(NN(mary))))*/
