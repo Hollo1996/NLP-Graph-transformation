@@ -9,5 +9,5 @@
 ### usage: use the "john loves mary" format
 ## mine.irtg
 ### date-of-creation:2018.05.20
-### discription: This is my solution for the task. It uses tree and graph languages. Parses grammer tree to dependency graph. I already understand the concept and most of the format. I have problem with the graph format, and it is a hard task to make the to graph reach a consistent state with the same meaning after every step. I have to add the verb/predicate before the subject or the object...
+### discription: This is my solution for the task. It uses tree and graph languages. Parses grammer tree to dependency graph. I already understand the concept and most of the format. 
 ### usage: Use the well known grammer tree of "john loves mary" in the well known format: S(NP(NN(john)),VP(V(loves),NP(NN(mary))))
