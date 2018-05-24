@@ -1,22 +1,13 @@
 interpretation tree: de.up.ling.irtg.algebra.TagTreeAlgebra
 interpretation graph: de.up.ling.irtg.algebra.graph.GraphAlgebra
 
-S! -> sentence(ROOT)
-[tree] 	?1
-[graph] f_subj(f_obj(merge("(r<root> / ROOT :root (m<predicate>))",r_predicate(?1))))
-
-
-ROOT -> predicateLoves(NNp,NNp)
-[tree] 	S(?1,VP(V(loves),?2))
-[graph] f_obj(merge(merge("(s<root> / loves  :nsubj (x<subject>) :dobj (z<object>))", r_subject(?1)), r_object(?2)))
-
-NNp -> nounLonly(NN)
+S! -> predicate(NP,VP)
+[tree] 	S(?1,?2)
+[graph] f_subj(f_vcomp(merge("(u<root> / root :root (w<vcomp>))", f_obj(merge(r_obj(?1), r_vcomp(r_subject_obj(?2)))))))
+							 
+NP -> lonlyNoun(NN)
 [tree] NP(NN(?1))
 [graph] f_subj(f_obj(?1))
-
-/*NNp -> noun2(NN2)
-[tree] NN2(?1)
-[graph] f_obj(merge("(np<root> / NN2 :noun (m<noun2>))",r_noun2(?1)))*/
 
 NN -> john
 [tree] john
@@ -26,8 +17,8 @@ NN -> mary
 [tree] mary
 [graph] "(n<root> / mary)"
 
-/*V -> loves
-[tree] loves
-[graph] "(v<root> / loves)"*/
+VP -> loves(NP)
+[tree] VP(V(loves),?1)
+[graph] f_obj(merge("(u<root> / loves  :dobj (v<object>)  :nsubj (w<subject>))", r_object(?1)))
 
-/*S(NP(NN(john)),VP(V(loves),NP(NN(mary))))*/
+/* input: S(NP(NN(john)),VP(V(loves),NP(NN(mary)))) */
