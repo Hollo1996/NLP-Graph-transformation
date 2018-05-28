@@ -9,5 +9,5 @@
 ### usage: use the "john loves mary" format
 ## mine.irtg
 ### date-of-creation:2018.05.20
-### discription: This is my solution for the task. It uses tree and graph languages. Parses grammer tree to dependency graph. I already understand the concept and most of the format. 
+### discription: This is my solution for the task. It uses tree and graph languages. Parses grammer tree to dependency graph. I already understand the concept and most of the format. I could make the verb independent in the tree language, but I did not find the right format for the graph language.
 ### usage: Use the well known grammer tree of "john loves mary" in the well known format: S(NP(NN(john)),VP(V(loves),NP(NN(mary))))
